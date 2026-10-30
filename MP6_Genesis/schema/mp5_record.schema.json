@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cis731:ps6:schema:mp5-record:1.0.0",
+  "title": "MP5 stream record (ASR transcript segment or VDB corpus document)",
+  "description": "Faithful JSON Schema transcription of MP5 contracts.py (transcript_schema, corpus_schema, check_events). Cross-field rules that JSON Schema cannot express (ts_start < ts_end, 0 < duration <= 30 s) and deployment allow-lists (ALLOWED_SOURCES, ALLOWED_LICENSES) stay in the executable contract layer (schema/contracts.py).",
+  "type": "object",
+  "required": ["record_id", "track", "source_id", "ts_start", "ts_end", "text", "ingest_ts"],
+  "properties": {
+    "record_id": {"type": "string", "pattern": "\\S", "description": "Non-null, non-blank after trim (MP5: trim(record_id) != '')."},
+    "track": {"enum": ["ASR", "VDB"]},
+    "source_id": {"type": "string", "minLength": 1, "description": "Must be in the deployment allow-list; MP5 used ['local_replay']."},
+    "ts_start": {"$ref": "#/$defs/timestamp"},
+    "ts_end": {"$ref": "#/$defs/timestamp"},
+    "text": {"type": "string", "pattern": "\\S", "description": "Non-null, non-blank after trim."},
+    "ingest_ts": {"$ref": "#/$defs/timestamp"},
+    "license_class": {"type": "string", "minLength": 1, "description": "Required for VDB (corpus_schema); allow-listed (MP5: ['public_domain'])."}
+  },
+  "allOf": [
+    {"if": {"properties": {"track": {"const": "VDB"}}, "required": ["track"]},
+     "then": {"required": ["license_class"]}}
+  ],
+  "$defs": {
+    "timestamp": {
+      "type": "string",
+      "description": "ISO-8601 instant. MP5 files carry naive local times that Spark reads as UTC (spark.sql.session.timeZone=UTC), so the offset is optional here.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?(Z|[+-]\\d{2}:\\d{2})?$"
+    }
+  }
+}
