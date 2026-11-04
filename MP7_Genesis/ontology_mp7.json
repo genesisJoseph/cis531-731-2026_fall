@@ -1,0 +1,21 @@
+{
+  "name": "ps6o extension for MP7 (CIS 731)",
+  "extends": "../MP6_Genesis/schema/ontology.json",
+  "new_class": {
+    "TropeLabel": "The main theme of a Chunk. Exactly one label per chunk (cardinality 1)."
+  },
+  "new_relation": {
+    "Chunk hasTrope TropeLabel": "label"
+  },
+  "labels": {
+    "youth": "youth and growing up",
+    "friendship": "friendship and loyalty",
+    "romance": "love and romance",
+    "self_love": "self-love and identity",
+    "longing": "loss and longing",
+    "fame": "fame and success",
+    "social": "social commentary",
+    "celebration": "celebration and fun"
+  },
+  "granularity": "One theme per chunk, because each chunk is a short description. Eight labels are broad enough that each has clear examples, and few enough to fit in a short prompt."
+}

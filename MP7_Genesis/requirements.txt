@@ -1,0 +1,11 @@
+torch
+transformers
+huggingface_hub
+faiss-cpu
+deal
+jsonschema
+referencing
+numpy
+jupyter
+nbconvert
+ipykernel
