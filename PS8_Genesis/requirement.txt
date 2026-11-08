@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+umap-learn
+matplotlib
+jupyter
+nbconvert
+ipykernel
+kaggle
