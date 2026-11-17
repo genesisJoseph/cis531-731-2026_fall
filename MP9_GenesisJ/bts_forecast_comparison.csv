@@ -1,0 +1,4 @@
+model,held_out_mse
+fixed_smoothing_forecast_mse,0.08577423542737961
+first_difference_extrapolation_mse,0.30942386388778687
+learned_conv_mse,0.17363516986370087

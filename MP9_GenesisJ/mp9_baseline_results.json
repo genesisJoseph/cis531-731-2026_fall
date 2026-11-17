@@ -1,0 +1,22 @@
+{
+  "model": "MP7 fixed-exemplar KNN",
+  "n_exemplars": 96,
+  "n_gold": 50,
+  "accuracy": 0.12,
+  "macro_f1": 0.11274509803921567,
+  "taxonomy_mapping": {
+    "artistic passion": "fame",
+    "generational inequality": "social",
+    "joy": "celebration",
+    "longing": "longing",
+    "love": "romance",
+    "loving oneself": "self_love",
+    "mutual comfort": "friendship",
+    "youth": "youth"
+  },
+  "limitations": [
+    "Human and MP7 label taxonomies differ",
+    "Some semantic mappings are approximate",
+    "Gold song descriptions may contain limited thematic information"
+  ]
+}

@@ -1,0 +1,7 @@
+k,metric,mean,ci_lower,ci_upper
+3,precision,0.16,0.1,0.2267
+3,recall,0.09,0.0584,0.1259
+5,precision,0.156,0.112,0.204
+5,recall,0.1451,0.1059,0.185
+10,precision,0.136,0.11,0.164
+10,recall,0.249,0.2023,0.2995

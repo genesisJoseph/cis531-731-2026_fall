@@ -1,0 +1,10 @@
+{
+  "record_id": "bts_corpus_001",
+  "track": "VDB",
+  "source_id": "local_replay",
+  "ts_start": "2026-10-20T12:01:00",
+  "ts_end": "2026-10-20T12:01:20",
+  "text": "BTS is a South Korean boy band consisting of RM, Jin, Suga, J-Hope, Jimin, V, and Jungkook. Their music explores themes such as youth, friendship, identity, and personal growth.",
+  "ingest_ts": "2026-10-20T12:01:25",
+  "license_class": "public_domain"
+}

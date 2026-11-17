@@ -1,0 +1,782 @@
+{
+  "status": "partial",
+  "seed": 42,
+  "environment": {
+    "python": "3.12.1"
+  },
+  "pending": [
+    "No saved MP6/MP7 FAISS index found; retrieval below is TF-IDF proxy, not rubric-required FAISS",
+    "Provide >=1000 genuine unlabeled chunks AND existing MP7 exemplars/classifier; do not substitute fabricated data",
+    "Provide verified gold_text.csv with item_id,text,cohort to score text predictions against gold",
+    "Retrieval P@k/Recall@k and baseline comparison require gold_text.csv and relevance judgments"
+  ],
+  "gold_gate": {
+    "rows": 50,
+    "passed": true,
+    "gold_unique": true,
+    "overlap": 20
+  },
+  "iaa": {
+    "n_overlap": 20,
+    "agreement": 0.8,
+    "kappa": 0.7720797720797721,
+    "kappa_ci95": [
+      0.5454545454545454,
+      0.9406528189910979
+    ],
+    "labels": [
+      "artistic passion",
+      "generational inequality",
+      "joy",
+      "longing",
+      "love",
+      "loving oneself",
+      "mutual comfort",
+      "youth"
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    ],
+    "disagreements": [
+      "d006",
+      "d011",
+      "d012",
+      "d014"
+    ]
+  },
+  "mp7": {
+    "exemplars": 96,
+    "exemplar_path": "/Users/genesisjoseph/Downloads/CIS731/cis531-731-2026_fall/MP9_GenesisJ/MP7_Genesis/exemplars.jsonl",
+    "saved_faiss_index_candidates": []
+  },
+  "convolution": {
+    "axis": "BTS original release year (project-specific VDB adaptation)",
+    "sample_size": 50,
+    "years": [
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "labels": [
+      "artistic passion",
+      "generational inequality",
+      "joy",
+      "longing",
+      "love",
+      "loving oneself",
+      "mutual comfort",
+      "youth"
+    ],
+    "counts": {
+      "2013": {
+        "artistic passion": 0,
+        "generational inequality": 1,
+        "joy": 0,
+        "longing": 0,
+        "love": 0,
+        "loving oneself": 0,
+        "mutual comfort": 0,
+        "youth": 1
+      },
+      "2014": {
+        "artistic passion": 0,
+        "generational inequality": 1,
+        "joy": 0,
+        "longing": 0,
+        "love": 1,
+        "loving oneself": 0,
+        "mutual comfort": 0,
+        "youth": 1
+      },
+      "2015": {
+        "artistic passion": 1,
+        "generational inequality": 1,
+        "joy": 0,
+        "longing": 1,
+        "love": 0,
+        "loving oneself": 0,
+        "mutual comfort": 0,
+        "youth": 1
+      },
+      "2016": {
+        "artistic passion": 0,
+        "generational inequality": 1,
+        "joy": 1,
+        "longing": 1,
+        "love": 1,
+        "loving oneself": 1,
+        "mutual comfort": 1,
+        "youth": 1
+      },
+      "2017": {
+        "artistic passion": 2,
+        "generational inequality": 1,
+        "joy": 0,
+        "longing": 1,
+        "love": 3,
+        "loving oneself": 0,
+        "mutual comfort": 0,
+        "youth": 0
+      },
+      "2018": {
+        "artistic passion": 0,
+        "generational inequality": 0,
+        "joy": 0,
+        "longing": 3,
+        "love": 1,
+        "loving oneself": 3,
+        "mutual comfort": 2,
+        "youth": 0
+      },
+      "2019": {
+        "artistic passion": 0,
+        "generational inequality": 0,
+        "joy": 1,
+        "longing": 0,
+        "love": 2,
+        "loving oneself": 1,
+        "mutual comfort": 1,
+        "youth": 0
+      },
+      "2020": {
+        "artistic passion": 2,
+        "generational inequality": 1,
+        "joy": 1,
+        "longing": 1,
+        "love": 0,
+        "loving oneself": 2,
+        "mutual comfort": 1,
+        "youth": 2
+      },
+      "2021": {
+        "artistic passion": 0,
+        "generational inequality": 0,
+        "joy": 2,
+        "longing": 0,
+        "love": 0,
+        "loving oneself": 0,
+        "mutual comfort": 0,
+        "youth": 0
+      },
+      "2022": {
+        "artistic passion": 0,
+        "generational inequality": 0,
+        "joy": 0,
+        "longing": 0,
+        "love": 0,
+        "loving oneself": 0,
+        "mutual comfort": 1,
+        "youth": 0
+      }
+    },
+    "smoothing_kernel": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "difference_kernel": [
+      -1,
+      1
+    ],
+    "bootstrap_replicates": 1000,
+    "drift": [
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "artistic passion",
+        "drift": 0.0625,
+        "ci_lower": 0.0,
+        "ci_upper": 0.1875
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "generational inequality",
+        "drift": -0.11011904761904762,
+        "ci_lower": -0.375,
+        "ci_upper": 0.125
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "joy",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "longing",
+        "drift": 0.0982142857142857,
+        "ci_lower": 0.0,
+        "ci_upper": 0.23214285714285715
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "love",
+        "drift": -0.047619047619047616,
+        "ci_lower": -0.2142857142857143,
+        "ci_upper": 0.07142857142857142
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "loving oneself",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "mutual comfort",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2014,
+        "to_year": 2015,
+        "label": "youth",
+        "drift": -0.11011904761904762,
+        "ci_lower": -0.35416666666666663,
+        "ci_upper": 0.1607142857142857
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "artistic passion",
+        "drift": 0.008928571428571425,
+        "ci_lower": -0.125,
+        "ci_upper": 0.14285714285714285
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "generational inequality",
+        "drift": -0.07440476190476186,
+        "ci_lower": -0.2767857142857143,
+        "ci_upper": 0.10736607142857121
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "joy",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "longing",
+        "drift": 0.008928571428571452,
+        "ci_lower": -0.125,
+        "ci_upper": 0.14285714285714285
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "love",
+        "drift": 0.05952380952380951,
+        "ci_lower": -0.13095238095238096,
+        "ci_upper": 0.2142857142857143
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "loving oneself",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "mutual comfort",
+        "drift": 0.03571428571428571,
+        "ci_lower": 0.0,
+        "ci_upper": 0.10714285714285714
+      },
+      {
+        "from_year": 2015,
+        "to_year": 2016,
+        "label": "youth",
+        "drift": -0.11011904761904759,
+        "ci_lower": -0.3125,
+        "ci_upper": 0.04464285714285715
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "artistic passion",
+        "drift": 0.008928571428571425,
+        "ci_lower": -0.125,
+        "ci_upper": 0.14285714285714285
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "generational inequality",
+        "drift": -0.06250000000000001,
+        "ci_lower": -0.19642857142857145,
+        "ci_upper": 0.07142857142857142
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "joy",
+        "drift": -0.03571428571428571,
+        "ci_lower": -0.10714285714285714,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "longing",
+        "drift": 0.020833333333333315,
+        "ci_lower": -0.14087301587301587,
+        "ci_upper": 0.15592757936507914
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "love",
+        "drift": 0.09920634920634924,
+        "ci_lower": -0.007936507936507936,
+        "ci_upper": 0.22619047619047616
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "loving oneself",
+        "drift": 0.047619047619047616,
+        "ci_lower": -0.0515873015873016,
+        "ci_upper": 0.1388888888888889
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "mutual comfort",
+        "drift": 0.01984126984126984,
+        "ci_lower": -0.07936507936507936,
+        "ci_upper": 0.1111111111111111
+      },
+      {
+        "from_year": 2016,
+        "to_year": 2017,
+        "label": "youth",
+        "drift": -0.09821428571428571,
+        "ci_lower": -0.23214285714285715,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "artistic passion",
+        "drift": -0.07142857142857142,
+        "ci_lower": -0.14285714285714285,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "generational inequality",
+        "drift": -0.07142857142857142,
+        "ci_lower": -0.17857142857142858,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "joy",
+        "drift": 0.01428571428571429,
+        "ci_lower": -0.07142857142857142,
+        "ci_upper": 0.11428571428571428
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "longing",
+        "drift": 0.011904761904761918,
+        "ci_lower": -0.11507936507936506,
+        "ci_upper": 0.11140873015872989
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "love",
+        "drift": -0.015079365079365137,
+        "ci_lower": -0.17222222222222222,
+        "ci_upper": 0.1476388888888889
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "loving oneself",
+        "drift": 0.09761904761904763,
+        "ci_lower": -0.04365079365079365,
+        "ci_upper": 0.23888888888888887
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "mutual comfort",
+        "drift": 0.06984126984126983,
+        "ci_lower": -0.04365079365079365,
+        "ci_upper": 0.1976190476190476
+      },
+      {
+        "from_year": 2017,
+        "to_year": 2018,
+        "label": "youth",
+        "drift": -0.03571428571428571,
+        "ci_lower": -0.10714285714285714,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "artistic passion",
+        "drift": -0.021428571428571422,
+        "ci_lower": -0.11785714285714285,
+        "ci_upper": 0.075
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "generational inequality",
+        "drift": -0.010714285714285711,
+        "ci_lower": -0.10714285714285714,
+        "ci_upper": 0.075
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "joy",
+        "drift": 0.075,
+        "ci_lower": 0.0,
+        "ci_upper": 0.17500000000000002
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "longing",
+        "drift": -0.09404761904761905,
+        "ci_lower": -0.2012202380952381,
+        "ci_upper": 0.00028769841269815107
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "love",
+        "drift": -0.03492063492063485,
+        "ci_lower": -0.17857142857142858,
+        "ci_upper": 0.11428571428571427
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "loving oneself",
+        "drift": 0.016666666666666663,
+        "ci_lower": -0.09166666666666662,
+        "ci_upper": 0.14722222222222225
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "mutual comfort",
+        "drift": 0.01944444444444446,
+        "ci_lower": -0.08611111111111111,
+        "ci_upper": 0.14722222222222225
+      },
+      {
+        "from_year": 2018,
+        "to_year": 2019,
+        "label": "youth",
+        "drift": 0.05,
+        "ci_lower": 0.0,
+        "ci_upper": 0.125
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "artistic passion",
+        "drift": 0.05,
+        "ci_lower": 0.0,
+        "ci_upper": 0.125
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "generational inequality",
+        "drift": 0.025,
+        "ci_lower": 0.0,
+        "ci_upper": 0.075
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "joy",
+        "drift": 0.22499999999999998,
+        "ci_lower": 0.10000000000000003,
+        "ci_upper": 0.325
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "longing",
+        "drift": -0.058333333333333334,
+        "ci_lower": -0.14166666666666666,
+        "ci_upper": 0.022222222222222227
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "love",
+        "drift": -0.1277777777777778,
+        "ci_lower": -0.2555555555555556,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "loving oneself",
+        "drift": -0.08333333333333331,
+        "ci_lower": -0.2138888888888889,
+        "ci_upper": 0.04722222222222222
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "mutual comfort",
+        "drift": -0.08055555555555555,
+        "ci_lower": -0.2111111111111111,
+        "ci_upper": 0.025
+      },
+      {
+        "from_year": 2019,
+        "to_year": 2020,
+        "label": "youth",
+        "drift": 0.05,
+        "ci_lower": 0.0,
+        "ci_upper": 0.125
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "artistic passion",
+        "drift": -0.05,
+        "ci_lower": -0.125,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "generational inequality",
+        "drift": -0.025,
+        "ci_lower": -0.075,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "joy",
+        "drift": 0.17500000000000004,
+        "ci_lower": 0.07499999999999996,
+        "ci_upper": 0.25
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "longing",
+        "drift": -0.025,
+        "ci_lower": -0.075,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "love",
+        "drift": -0.1,
+        "ci_lower": -0.2,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "loving oneself",
+        "drift": -0.10000000000000002,
+        "ci_lower": -0.22499999999999998,
+        "ci_upper": 0.0
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "mutual comfort",
+        "drift": 0.17500000000000002,
+        "ci_lower": 0.07437500000000005,
+        "ci_upper": 0.25
+      },
+      {
+        "from_year": 2020,
+        "to_year": 2021,
+        "label": "youth",
+        "drift": -0.05,
+        "ci_lower": -0.125,
+        "ci_upper": 0.0
+      }
+    ],
+    "limitations": [
+      "Nonrandom 50-song gold sample",
+      "Sparse year cohorts",
+      "Yearly axis differs from prescribed release-decade axis"
+    ]
+  },
+  "learned_convolution": {
+    "train_windows": 4,
+    "test_windows": 3,
+    "test_target_years": [
+      2020,
+      2021,
+      2022
+    ],
+    "fixed_smoothing_forecast_mse": 0.08577423542737961,
+    "first_difference_extrapolation_mse": 0.30942386388778687,
+    "learned_conv_mse": 0.17363516986370087,
+    "learned_weights_per_label": {
+      "artistic passion": [
+        -1.7167953103580658e-07,
+        0.4955752491950989,
+        8.58693596228477e-08
+      ],
+      "generational inequality": [
+        0.31159037351608276,
+        -0.018252555280923843,
+        -0.062282100319862366
+      ],
+      "joy": [
+        1.3282666206359863,
+        6.467024604717153e-08,
+        -1.6806872338293033e-07
+      ],
+      "longing": [
+        0.7158962488174438,
+        0.4111725687980652,
+        0.006827897857874632
+      ],
+      "love": [
+        1.252572774887085,
+        0.4651029407978058,
+        0.1068999320268631
+      ],
+      "loving oneself": [
+        0.9221417307853699,
+        2.1975033283233643,
+        0.1798168569803238
+      ],
+      "mutual comfort": [
+        0.8828626275062561,
+        1.535056471824646,
+        0.2601284086704254
+      ],
+      "youth": [
+        0.09430345147848129,
+        -0.28761520981788635,
+        0.6457431316375732
+      ]
+    },
+    "limitations": [
+      "Tiny chronological test set; exploratory only",
+      "Unconstrained Conv1d outputs are not guaranteed to be probabilities"
+    ]
+  }
+}

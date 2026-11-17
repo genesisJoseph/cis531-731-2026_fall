@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cis731:ps6:schema:vdb-record:1.0.0",
+  "title": "PS6 vector record (one embedded chunk of an MP5 record)",
+  "description": "Extends the MP5 record. The MP5 record_id of the parent becomes doc_id; record_id is the chunk id; text is the chunk text.",
+  "allOf": [{"$ref": "urn:cis731:ps6:schema:mp5-record:1.0.0"}],
+  "type": "object",
+  "required": ["license_class", "doc_id", "chunk", "embedding", "provenance"],
+  "properties": {
+    "doc_id": {"type": "string", "pattern": "\\S"},
+    "chunk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "index", "char_start", "char_end", "token_count"],
+      "properties": {
+        "strategy": {"enum": ["fixed_window", "sentence_boundary", "structure_aware"]},
+        "index": {"type": "integer", "minimum": 0},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1},
+        "token_count": {"type": "integer", "minimum": 1, "maximum": 256}
+      }
+    },
+    "embedding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_id", "model_revision", "dim", "vector"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 1},
+        "model_revision": {"type": "string", "minLength": 1},
+        "dim": {"const": 384},
+        "vector": {"type": "array", "items": {"type": "number"}, "minItems": 384, "maxItems": 384}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["doc_sha256", "content_sha256", "chunker_version", "embedded_at"],
+      "properties": {
+        "doc_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "chunker_version": {"type": "string", "minLength": 1},
+        "embedded_at": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

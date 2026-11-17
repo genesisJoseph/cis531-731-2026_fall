@@ -1,0 +1,29 @@
+{
+  "name": "ps6o (custom CIS 731 ontology)",
+  "classes": {
+    "Document": "An admitted MP5 record (ASR transcript segment or VDB text). Key: doc_id.",
+    "Chunk": "A character span of one Document; the unit of retrieval. Key: record_id.",
+    "Embedding": "The vector for one Chunk from one model. Stored inside the chunk's record.",
+    "EmbeddingModel": "The encoder that produced the vector: model_id + model_revision."
+  },
+  "relations": {
+    "Chunk partOf Document": "doc_id",
+    "Embedding of Chunk": "record_id",
+    "Embedding generatedBy EmbeddingModel": "embedding.model_id, embedding.model_revision"
+  },
+  "field_mapping": {
+    "record_id": "Chunk",
+    "doc_id, track, source_id, license_class, ts_start, ts_end, ingest_ts": "Document",
+    "text, chunk.*": "Chunk",
+    "embedding.vector, embedding.dim": "Embedding",
+    "embedding.model_id, embedding.model_revision": "EmbeddingModel",
+    "provenance.doc_sha256": "Document (content version)",
+    "provenance.content_sha256, provenance.chunker_version, provenance.embedded_at": "Chunk/Embedding provenance"
+  },
+  "granularity": [
+    "Chunk is the main unit because retrieval and relevance judging both happen per chunk.",
+    "Spans are character offsets, not token offsets, so they stay valid if the tokenizer or model changes.",
+    "Embedding is a separate class but stored in the chunk record, because the project uses one model; a second model would become a second record per chunk.",
+    "No Section class: MP5 records are at most 30 seconds (1-2 sentences), so they have no internal structure to model."
+  ]
+}

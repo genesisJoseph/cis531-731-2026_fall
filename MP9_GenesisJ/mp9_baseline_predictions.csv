@@ -1,0 +1,51 @@
+item_id,human_label,mapped_human_label,mp7_prediction,correct
+d001,love,romance,celebration,False
+d002,longing,longing,celebration,False
+d003,loving oneself,self_love,friendship,False
+d004,youth,youth,social,False
+d005,joy,celebration,fame,False
+d006,longing,longing,fame,False
+d007,loving oneself,self_love,self_love,True
+d008,generational inequality,social,youth,False
+d009,mutual comfort,friendship,celebration,False
+d010,youth,youth,celebration,False
+d011,longing,longing,self_love,False
+d012,loving oneself,self_love,celebration,False
+d013,mutual comfort,friendship,celebration,False
+d014,joy,celebration,romance,False
+d015,artistic passion,fame,romance,False
+d016,love,romance,self_love,False
+d017,youth,youth,youth,True
+d018,mutual comfort,friendship,celebration,False
+d019,generational inequality,social,romance,False
+d020,artistic passion,fame,celebration,False
+d021,love,romance,self_love,False
+d022,love,romance,self_love,False
+d023,love,romance,romance,True
+d024,love,romance,self_love,False
+d025,love,romance,celebration,False
+d026,loving oneself,self_love,longing,False
+d027,loving oneself,self_love,longing,False
+d028,loving oneself,self_love,self_love,True
+d029,loving oneself,self_love,longing,False
+d030,artistic passion,fame,romance,False
+d031,joy,celebration,celebration,True
+d032,joy,celebration,romance,False
+d033,generational inequality,social,celebration,False
+d034,generational inequality,social,self_love,False
+d035,generational inequality,social,longing,False
+d036,generational inequality,social,celebration,False
+d037,mutual comfort,friendship,friendship,True
+d038,mutual comfort,friendship,romance,False
+d039,youth,youth,longing,False
+d040,youth,youth,friendship,False
+d041,longing,longing,romance,False
+d042,longing,longing,self_love,False
+d043,longing,longing,celebration,False
+d044,longing,longing,youth,False
+d045,love,romance,longing,False
+d046,artistic passion,fame,longing,False
+d047,artistic passion,fame,romance,False
+d048,youth,youth,romance,False
+d049,joy,celebration,longing,False
+d050,mutual comfort,friendship,self_love,False
